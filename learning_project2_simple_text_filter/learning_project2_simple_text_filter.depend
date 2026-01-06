@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1767082273 source:/home/zagdiablo/Documents/learnCode/c/learning_project2_simple_text_filter/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+

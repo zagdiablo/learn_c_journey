@@ -1,0 +1,9 @@
+[{
+		"file":	"/home/zagdiablo/Documents/learnCode/c/attempt2/test1/main.c",
+		"directory":	"/home/zagdiablo/Documents/learnCode/c/attempt2/test1",
+		"command":	"/bin/clang -c /home/zagdiablo/Documents/learnCode/c/attempt2/test1/main.c -o /home/zagdiablo/Documents/learnCode/c/attempt2/test1/main.c.o -target x86_64-pc-linux-gnu -I/usr/include/c++/14 -I/usr/include/x86_64-linux-gnu/c++/14 -I/usr/include/c++/14/backward -I/usr/lib/llvm-19/lib/clang/19/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -gdwarf-2  -fstandalone-debug  -O0  -Wall"
+	}, {
+		"file":	"/home/zagdiablo/Documents/learnCode/c/attempt2/attempt3/main.c",
+		"directory":	"/home/zagdiablo/Documents/learnCode/c/attempt2/attempt3",
+		"command":	"/bin/clang -c /home/zagdiablo/Documents/learnCode/c/attempt2/attempt3/main.c -o /home/zagdiablo/Documents/learnCode/c/attempt2/attempt3/main.c.o -target x86_64-pc-linux-gnu -I/usr/include/c++/14 -I/usr/include/x86_64-linux-gnu/c++/14 -I/usr/include/c++/14/backward -I/usr/lib/llvm-19/lib/clang/19/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -gdwarf-2  -fstandalone-debug  -O0  -Wall"
+	}]

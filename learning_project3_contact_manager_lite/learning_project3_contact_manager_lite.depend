@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1767106083 source:/home/zagdiablo/Documents/learnCode/c/learning_project3_contact_manager_lite/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
