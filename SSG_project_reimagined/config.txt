@@ -1,0 +1,2 @@
+title=My dynamic C blog!
+author=System Engineer
