@@ -1,10 +1,10 @@
 CC = clang
-CFLAGS = -std=c99 -Wall -Werror -lraylib -lm
+CFLAGS = -std=c99 -Wall -Werror
+LINKERS = -lraylib -lm
 SRCS = main.c
 TARGET = main
 
 all:
-	$(CC) $(CFLAGS) $(SRCS) -o $(TARGET)
-
+	$(CC) $(CFLAGS) $(SRCS) -o $(TARGET) $(LINKERS)
 clean:
 	rm -f $(TARGET)
