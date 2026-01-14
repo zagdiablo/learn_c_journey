@@ -1,7 +1,7 @@
 CC = clang
 CFLAGS = -std=c99 -Wall -Werror
 LINKERS = -lraylib -lm
-SRCS = main.c
+SRCS = main.c save_io.c
 TARGET = main
 
 all:
