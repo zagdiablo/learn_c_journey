@@ -18,6 +18,14 @@ int main(void){
         return socket_fd;
     }
 
+    // --- on time wait, use the socket anyway ---
+    int opt = 1;
+    if (setsockopt(socket_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt))) {
+        perror("setsockopt");
+        return 1;
+    }
+    // ----------------
+
     int socket_bind = bind(socket_fd, (struct sockaddr *)&server_addr, sizeof(server_addr));
     if(socket_bind){
         printf("Bind error!");
@@ -35,24 +43,24 @@ int main(void){
     struct sockaddr_in client_addr;
     socklen_t client_len = sizeof(client_addr);
 
-    int client_fd = accept(socket_fd, (struct sockaddr *)&client_addr, &client_len);
-    if(client_fd == -1){
-        printf("Client accept fd error!");
-        return client_fd;
+    while(1){
+        int client_fd = accept(socket_fd, (struct sockaddr *)&client_addr, &client_len);
+        if(client_fd == -1){
+            printf("Client accept fd error!");
+            return client_fd;
+        }
+        // after creating clientfd and accepting connection from socket_fd
+        // treat it as a file
+        char buffer[1024] = {0};
+        // read from network into buffer
+        ssize_t bytes_read = read(client_fd, buffer, 1024);
+        // print what they (external) sent to us (Sysadmin debug)
+        printf("Client sent: %s", buffer);
+        // sent back from buffer through bytes_read to them (external)
+        write(client_fd, buffer, bytes_read);
+        close(client_fd);
     }
 
-    // after creating clientfd and accepting connection from socket_fd
-    // treat it as a file
-    char buffer[1024] = {0};
-    // read from network into buffer
-    ssize_t bytes_read = read(client_fd, buffer, 1024);
-
-    // print what they (external) sent to us (Sysadmin debug)
-    printf("Client sent: %s", buffer);
-    // sent back from buffer through bytes_read to them (external)
-    write(client_fd, buffer, bytes_read);
-
-    close(client_fd);
     close(socket_fd);
     return 0;
 }
